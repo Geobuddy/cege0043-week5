@@ -1,35 +1,28 @@
-var xhrNode;
+var xhrNode; //define global variable to process AJAX request
 
-function callDivNodeJSChange() {
-// 		xhr = new XMLHttpRequest();
-// 		xhr.open("GET", "test1.html", true);
-// 		xhr.onreadystatechange = processDivChange;
-// 		try {
-// 			xhr.setRequestHeader("Content-Type", "application/x-www-formurlencoded");
-// 		}
-// 		catch (e) {
-// // this only works in internet explorer
-// 		}
-// 		xhr.send();
-
-		xhrNode = new XMLHttpRequest();
-		var url = "http://developer.cege.ucl.ac.uk:"+ httpPortNumber;	
-		xhrNode.open("GET", portNumber, true);
-		xhrNode.onreadystatechange = processDivNodeJSChange;
-		try {
-			xhr.setRequestHeader("Content-Type", "application/x-www-formurlencoded");
-		}
-		catch (e) {
-// this only works in internet explorer
-		}
-		xhrNode.send();
+// AJAX request function
+function callDivNodeJSChange(){
+    xhrNode = new XMLHttpRequest();
+    var url = "http://developer.cege.ucl.ac.uk:" + httpPortNumber; //get url with non-hardcoded port number
+    xhrNode.open("GET", url, true); // send to server
+    xhrNode.onreadystatechange = processDivNodeJSChange;
+    try {
+        xhrNode.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    }
+    catch (e) {
+        // this only works in internet explorer
+    }
+    xhrNode.send();
 }
-function processDivNodeJSChange() {
-if (xhrNode.readyState < 4) // while waiting response from server
-		document.getElementById('ajaxtext').innerHTML = "Loading...";
-	else if (xhrNode.readyState === 4) { // 4 = Response from server has been completely loaded.
-		if (xhrNode.status == 200 && xhrNode.status < 300)
-// http status between 200 to 299 are all successful
-			document.getElementById('ajaxtext').innerHTML = xhrNode.responseText;
-	}
+
+// AJAX response function
+function processDivNodeJSChange(){
+    if (xhrNode.readyState < 4) //while waiting for response from server
+        document.getElementById('ajaxtext').innerHTML = "Loading...";
+
+    else if (xhrNode.readyState === 4) { // 4 = response from server completely loaded
+        if (xhrNode.status > 199 && xhrNode.status < 300) 
+            // http status between 200 to 299 are all successful
+            document.getElementById('ajaxtext').innerHTML = xhrNode.responseText;
+    };
 }
