@@ -1,0 +1,9 @@
+[submodule "ucesapc/www/css"]
+	path = ucesapc/www/css
+	url = https://github.com/Geobuddy/cege0043-cssReference.git
+[submodule "ucesapc/www/images"]
+	path = ucesapc/www/images
+	url = https://github.com/Geobuddy/cege0043-imagesReference.git
+[submodule "ucesapc/www/js"]
+	path = ucesapc/www/js
+	url = https://github.com/Geobuddy/cege0043-jsReference
