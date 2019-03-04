@@ -140,7 +140,7 @@
           <a class="mdl-navigation__link" href=""onclick='addPointLinePoly();return false;'><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>Points/Lines/Circle</a>
           <a class="mdl-navigation__link" href=""onclick='trackLocation();return false;'><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>userTracking</a>
           <a class="mdl-navigation__link" href=""onclick='getPort();return false;'><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>getPort</a>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">people</i>Social</a>
+          <a class="mdl-navigation__link" href=""onclick='callDivNodeJSChange();return false;'><i class="mdl-color-text--blue-grey-400 material-icons"role="presentation">forum</i>Change Div Content</a>
           <div class="mdl-layout-spacer"></div>
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
         </nav>
@@ -150,6 +150,7 @@
             <div class="demo-separator mdl-cell--1-col"></div>
             <div id="ucllogo" name="ucllogo">div goes here </div>
             <div id="mapid" style="width: 600px; height: 400px;"></div>
+            <div id="ajaxtest" style="width: 1600px; height: 20px;"></div>
           </div>
         </div>
       </main>
@@ -161,6 +162,8 @@
       <script src="js/userTracking.js"></script>
       <script src="js/startup.js"></script>
       <script src="js/utilities.js"></script>
+      <script src="js/ajax.js"></script>
+
       <script>startup(); </script>
   </body>
 </html>

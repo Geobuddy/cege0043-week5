@@ -8,4 +8,6 @@ getEarthquakes();
 function trackAndCircle(){
     trackLocation();
     addPointLinePoly();
+    getPort();
 }
+
