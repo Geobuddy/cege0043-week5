@@ -1,11 +1,13 @@
-function startup() {
-document.addEventListener('DOMContentLoaded', function() {
-trackAndCircle ();
-getEarthquakes();	
-}, false);
-}
 
 function trackAndCircle(){
-    trackLocation();
-    addPointLinePoly();
+	trackLocation();
+	addPointLinePoly();
+	//getEarthquakes();
+}
+
+// add Point/Line/Circle data and track location automatically - useful for setting up different startup functions!
+function startup(){
+	document.addEventListener('DOMContentLoaded',function(){
+		getPort();
+	},false);
 }

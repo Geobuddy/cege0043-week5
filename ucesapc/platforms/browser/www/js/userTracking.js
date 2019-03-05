@@ -16,7 +16,7 @@ function showPosition(position) {
     userMarker = L.marker([position.coords.latitude, position.coords.longitude]).addTo(mymap)
         .bindPopup("<b>Hello!</b><br/>This is my position").openPopup();
 
-    mymap.setView([position.coords.latitude, position.coords.longitude], 10)
+    mymap.setView([position.coords.latitude, position.coords.longitude], 15)
 
     getDistance()
 
@@ -61,7 +61,7 @@ function calculateDistance(lat1, lon1, lat2, lon2, unit) {
 
 // calculate distance from earthquake points
 function getDistanceFromMultiplePoints(position){
-    var minDistance = 100000000000;
+    var minDistance = 1000000;
     var closestQuake = "";
     for(var i = 0; i < earthquakes.features.length; i++){
         var obj = earthquakes.features[i];
