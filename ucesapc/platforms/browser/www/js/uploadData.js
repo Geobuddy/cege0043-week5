@@ -43,11 +43,14 @@ var client; // the global variable that holds the request
 // create AJAX request
 function processData(postString) {
 client = new XMLHttpRequest();
-client.open('POST','http://developer.cege.ucl.ac.uk:30250/reflectData',true);
+postString = postString + "&port_id=" + httpPortNumber;
+var url = 'http://developer.cege.ucl.ac.uk:'+ httpPortNumber + "/uploadData";
+client.open('POST',url,true);
 client.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 client.onreadystatechange = dataUploaded;
 client.send(postString);
-p}
+}
+
 // create the code to wait for the response from the data server, and process the response once it is received
 function dataUploaded() {
 // this function listens out for the server to say that the data is ready - i.e. has state 4
